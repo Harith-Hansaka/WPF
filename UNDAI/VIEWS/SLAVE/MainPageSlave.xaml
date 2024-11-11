@@ -1,0 +1,1900 @@
+﻿<UserControl
+    x:Class="UNDAI.VIEWS.SLAVE.MainPageSlave"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+    xmlns:local="clr-namespace:UNDAI.VIEWS.SLAVE"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    PreviewMouseDown="UserControl_PreviewMouseDown"
+    PreviewStylusDown="UserControl_PreviewStylusDown"
+    PreviewTouchDown="UserControl_PreviewTouchDown"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <!--  Define the ControlTemplate for the button  -->
+        <ControlTemplate x:Key="ClickableButtonTemplate" TargetType="Button">
+            <Border
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="5">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="-40"
+                        Opacity="0.3"
+                        ShadowDepth="4" />
+                </Border.Effect>
+            </Border>
+        </ControlTemplate>
+
+        <!--  Define a Style for the button  -->
+        <Style x:Key="ClickableButtonStyle" TargetType="Button">
+            <Setter Property="Template" Value="{StaticResource ClickableButtonTemplate}" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderBrush" Value="Blue" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+
+            <Style.Triggers>
+                <!--  Trigger for when the button is pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#adb5bd" />
+                    <Setter Property="BorderBrush" Value="#1b263b" />
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
+
+        <!--  Define the ControlTemplate for the button  -->
+        <ControlTemplate x:Key="ClickableButtonTemplate1" TargetType="Button">
+            <Border
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="5">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="-40"
+                        Opacity="0.3"
+                        ShadowDepth="4" />
+                </Border.Effect>
+            </Border>
+        </ControlTemplate>
+
+        <!--  Define a Style for the button  -->
+        <Style x:Key="ClickableButtonStyle1" TargetType="Button">
+            <Setter Property="Template" Value="{StaticResource ClickableButtonTemplate1}" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Blue" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+
+            <Style.Triggers>
+                <!--  Trigger for when the button is pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#30000000" />
+                    <Setter Property="BorderBrush" Value="#1b263b" />
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
+
+        <!--  Define the ControlTemplate for the button  -->
+        <ControlTemplate x:Key="ClickableButtonTemplate3" TargetType="Button">
+            <Border
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="5">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="-40"
+                        Opacity="0.3"
+                        ShadowDepth="4" />
+                </Border.Effect>
+            </Border>
+        </ControlTemplate>
+
+        <!--  Define a Style for the button  -->
+        <Style x:Key="ClickableButtonStyle3" TargetType="Button">
+            <Setter Property="Template" Value="{StaticResource ClickableButtonTemplate3}" />
+            <Setter Property="Background" Value="#FDEF75" />
+            <Setter Property="BorderBrush" Value="Blue" />
+            <Setter Property="BorderThickness" Value="0.5" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+
+            <Style.Triggers>
+                <!--  Trigger for when the button is pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#30000000" />
+                    <Setter Property="BorderBrush" Value="#1b263b" />
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
+
+        <!--  Define the ControlTemplate for the button  -->
+        <ControlTemplate x:Key="ClickableButtonTemplate4" TargetType="Button">
+            <Border
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="5">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="-40"
+                        Opacity="0.3"
+                        ShadowDepth="4" />
+                </Border.Effect>
+            </Border>
+        </ControlTemplate>
+
+        <!--  Define a Style for the button  -->
+        <Style x:Key="ClickableButtonStyle4" TargetType="Button">
+            <Setter Property="Template" Value="{StaticResource ClickableButtonTemplate4}" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderBrush" Value="Blue" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Foreground" Value="Red" />
+
+            <Style.Triggers>
+                <!--  Trigger for when the button is pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#ED524F" />
+                    <Setter Property="BorderBrush" Value="#1b263b" />
+                    <Setter Property="Foreground" Value="White" />
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
+
+        <!--  Define the ControlTemplate for the button  -->
+        <ControlTemplate x:Key="ClickableButtonTemplateUP" TargetType="Button">
+            <Border
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="5">
+
+                <!--  Use a Grid to host multiple elements  -->
+                <Grid>
+                    <!--  ContentPresenter for button content  -->
+                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+
+                    <!--  Image for the button  -->
+                    <Image
+                        x:Name="ButtonImage"
+                        Width="150"
+                        Source="\RESOURCES\UP ARROW.png" />
+                </Grid>
+
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="-40"
+                        Opacity="0.3"
+                        ShadowDepth="4" />
+                </Border.Effect>
+            </Border>
+
+            <!--  Trigger to change the image when the button is pressed  -->
+            <ControlTemplate.Triggers>
+                <!--  Trigger when the button is pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter TargetName="ButtonImage" Property="gif:AnimationBehavior.SourceUri" Value="\RESOURCES\UP ARROW2.gif" />
+                </Trigger>
+
+                <!--  Trigger to revert back when not pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="False">
+                    <Setter TargetName="ButtonImage" Property="gif:AnimationBehavior.SourceUri" Value="\RESOURCES\UP ARROW.gif" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <!--  Define a Style for the button  -->
+        <Style x:Key="ClickableButtonStyleUP" TargetType="Button">
+            <Setter Property="Template" Value="{StaticResource ClickableButtonTemplateUP}" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderBrush" Value="Blue" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+
+            <Style.Triggers>
+                <!--  Trigger for when the button is pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#adb5bd" />
+                    <Setter Property="BorderBrush" Value="#1b263b" />
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
+
+        <!--  Define the ControlTemplate for the button  -->
+        <ControlTemplate x:Key="ClickableButtonTemplateDOWN" TargetType="Button">
+            <Border
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="5">
+
+                <!--  Use a Grid to host multiple elements  -->
+                <Grid>
+                    <!--  ContentPresenter for button content  -->
+                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+
+                    <!--  Image for the button  -->
+                    <Image
+                        x:Name="ButtonImage"
+                        Width="150"
+                        Source="\RESOURCES\DOWN ARROW.png" />
+                </Grid>
+
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="-40"
+                        Opacity="0.3"
+                        ShadowDepth="4" />
+                </Border.Effect>
+            </Border>
+
+            <!--  Trigger to change the image when the button is pressed  -->
+            <ControlTemplate.Triggers>
+                <!--  Trigger when the button is pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter TargetName="ButtonImage" Property="gif:AnimationBehavior.SourceUri" Value="\RESOURCES\DOWN ARROW2.gif" />
+                </Trigger>
+
+                <!--  Trigger to revert back when not pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="False">
+                    <Setter TargetName="ButtonImage" Property="gif:AnimationBehavior.SourceUri" Value="\RESOURCES\DOWN ARROW.gif" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <!--  Define a Style for the button  -->
+        <Style x:Key="ClickableButtonStyleDOWN" TargetType="Button">
+            <Setter Property="Template" Value="{StaticResource ClickableButtonTemplateDOWN}" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderBrush" Value="Blue" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+
+            <Style.Triggers>
+                <!--  Trigger for when the button is pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#adb5bd" />
+                    <Setter Property="BorderBrush" Value="#1b263b" />
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
+
+        <!--  Define the ControlTemplate for the button  -->
+        <ControlTemplate x:Key="ClickableButtonTemplateCCW" TargetType="Button">
+            <Border
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="5">
+
+                <!--  Use a Grid to host multiple elements  -->
+                <Grid>
+                    <!--  ContentPresenter for button content  -->
+                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+
+                    <!--  Image for the button  -->
+                    <Image
+                        x:Name="ButtonImage"
+                        Width="150"
+                        Source="\RESOURCES\CCW ROTATE.png" />
+                </Grid>
+
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="-40"
+                        Opacity="0.3"
+                        ShadowDepth="4" />
+                </Border.Effect>
+            </Border>
+
+            <!--  Trigger to change the image when the button is pressed  -->
+            <ControlTemplate.Triggers>
+                <!--  Trigger when the button is pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter TargetName="ButtonImage" Property="gif:AnimationBehavior.SourceUri" Value="\RESOURCES\CCW ROTATE2.gif" />
+                </Trigger>
+
+                <!--  Trigger to revert back when not pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="False">
+                    <Setter TargetName="ButtonImage" Property="gif:AnimationBehavior.SourceUri" Value="\RESOURCES\CCW ROTATE.gif" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <!--  Define a Style for the button  -->
+        <Style x:Key="ClickableButtonStyleCCW" TargetType="Button">
+            <Setter Property="Template" Value="{StaticResource ClickableButtonTemplateCCW}" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderBrush" Value="Blue" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+
+            <Style.Triggers>
+                <!--  Trigger for when the button is pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#adb5bd" />
+                    <Setter Property="BorderBrush" Value="#1b263b" />
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
+
+
+        <!--  Define the ControlTemplate for the button  -->
+        <ControlTemplate x:Key="ClickableButtonTemplateCW" TargetType="Button">
+            <Border
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="5">
+
+                <!--  Use a Grid to host multiple elements  -->
+                <Grid>
+                    <!--  ContentPresenter for button content  -->
+                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+
+                    <!--  Image for the button  -->
+                    <Image
+                        x:Name="ButtonImage"
+                        Width="150"
+                        Source="\RESOURCES\CW ROTATE.png" />
+                </Grid>
+
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="-40"
+                        Opacity="0.3"
+                        ShadowDepth="4" />
+                </Border.Effect>
+            </Border>
+
+            <!--  Trigger to change the image when the button is pressed  -->
+            <ControlTemplate.Triggers>
+                <!--  Trigger when the button is pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter TargetName="ButtonImage" Property="gif:AnimationBehavior.SourceUri" Value="\RESOURCES\CW ROTATE2.gif" />
+                </Trigger>
+
+                <!--  Trigger to revert back when not pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="False">
+                    <Setter TargetName="ButtonImage" Property="gif:AnimationBehavior.SourceUri" Value="\RESOURCES\CW ROTATE.gif" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <!--  Define a Style for the button  -->
+        <Style x:Key="ClickableButtonStyleCW" TargetType="Button">
+            <Setter Property="Template" Value="{StaticResource ClickableButtonTemplateCW}" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderBrush" Value="Blue" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+
+            <Style.Triggers>
+                <!--  Trigger for when the button is pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#adb5bd" />
+                    <Setter Property="BorderBrush" Value="#1b263b" />
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
+
+        <!--  Define the ControlTemplate for the button  -->
+        <ControlTemplate x:Key="ConnectButtonTemplate" TargetType="Button">
+            <Border
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="5">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="-40"
+                        Opacity="0.3"
+                        ShadowDepth="4" />
+                </Border.Effect>
+            </Border>
+        </ControlTemplate>
+
+        <!--  Define a Style for the button  -->
+        <Style x:Key="ConnectButtonStyle" TargetType="Button">
+            <Setter Property="Template" Value="{StaticResource ConnectButtonTemplate}" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+
+            <Style.Triggers>
+                <!--  Trigger for when the button is pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#300077b6" />
+                    <Setter Property="BorderBrush" Value="#1b263b" />
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Focusable" Value="False" />
+        </Style>
+
+    </UserControl.Resources>
+
+    <Viewbox
+        x:Name="viewBox1"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Top"
+        Stretch="Uniform"
+        StretchDirection="Both"
+        UseLayoutRounding="True">
+
+        <Grid
+            Width="1440"
+            Height="900"
+            Margin="10"
+            Background="LightYellow"
+            Grid.IsSharedSizeScope="True">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="AUTO" />
+                <RowDefinition Height="AUTO" />
+                <RowDefinition Height="AUTO" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.9*" />
+                <ColumnDefinition Width="0.8*" />
+                <ColumnDefinition Width="0.05*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Orientation="Horizontal">
+
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="AUTO" />
+                        <ColumnDefinition Width="AUTO" />
+                        <ColumnDefinition Width="AUTO" />
+                        <ColumnDefinition Width="AUTO" />
+                        <ColumnDefinition Width="220" />
+                        <ColumnDefinition Width="AUTO" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Height="90"
+                        Margin="0,0,30,0"
+                        VerticalAlignment="Top"
+                        Background="{Binding ConnectBtnColor}"
+                        BorderBrush="Blue"
+                        BorderThickness="1"
+                        CornerRadius="5">
+
+                        <Button
+                            x:Name="btnConnectSlave"
+                            Width="250"
+                            Background="Transparent"
+                            Content="{Binding ConnectedButtonText}"
+                            FontSize="40"
+                            Foreground="White"
+                            PreviewMouseDown="btnConnect_PreviewMouseDown"
+                            PreviewMouseMove="btnConnect_PreviewMouseMove"
+                            PreviewMouseUp="btnConnect_PreviewMouseUp"
+                            PreviewStylusDown="btnConnect_PreviewStylusDown"
+                            PreviewStylusMove="btnConnect_PreviewStylusMove"
+                            PreviewStylusUp="btnConnect_PreviewStylusUp"
+                            PreviewTouchDown="btnConnect_PreviewTouchDown"
+                            PreviewTouchMove="btnConnect_PreviewTouchMove"
+                            PreviewTouchUp="btnConnect_PreviewTouchUp"
+                            Style="{StaticResource ConnectButtonStyle}"
+                            Stylus.IsFlicksEnabled="False"
+                            Stylus.IsPressAndHoldEnabled="False" />
+
+                    </Border>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="0,0,30,0"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Background="#45A6F4"
+                        BorderBrush="Blue"
+                        BorderThickness="1"
+                        CornerRadius="5">
+
+                        <TextBlock
+                            x:Name="txtBlockComSlave"
+                            Width="180"
+                            Height="AUTO"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            FontSize="40"
+                            Foreground="Black"
+                            Text="リモート"
+                            TextAlignment="Center" />
+                    </Border>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Margin="0,0,30,0"
+                        Background="{Binding GPSStatusDisplay}"
+                        BorderBrush="Blue"
+                        BorderThickness="1"
+                        CornerRadius="5">
+
+                        <TextBlock
+                            x:Name="txtBlockGPS"
+                            Width="200"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            FontSize="40"
+                            Foreground="Black"
+                            Text="{Binding GPSStatusName}"
+                            TextAlignment="Center" />
+
+                    </Border>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        Margin="0,0,30,0"
+                        Background="#45A6F4"
+                        BorderBrush="Blue"
+                        BorderThickness="1"
+                        CornerRadius="5">
+
+                        <TextBlock
+                            Width="180"
+                            Height="AUTO"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="40"
+                            Text="1：N接続"
+                            TextAlignment="Center" />
+
+                    </Border>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="5"
+                        Margin="0"
+                        Background="LightYellow">
+
+                        <TextBlock
+                            x:Name="txtBlockTime"
+                            Width="250"
+                            Height="AUTO"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top"
+                            FontSize="40"
+                            Text="{Binding TxtBlockTime}"
+                            TextAlignment="Center" />
+
+                    </Border>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="5"
+                        Margin="0"
+                        BorderThickness="1">
+
+                        <TextBlock
+                            x:Name="txtBlockDate"
+                            Width="250"
+                            Height="AUTO"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Bottom"
+                            FontSize="40"
+                            Text="{Binding TxtBlockDate}"
+                            TextAlignment="Center" />
+
+                    </Border>
+
+                    <Canvas
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        Background="#80ffffe0"
+                        Visibility="{Binding ControllerAccess}" />
+
+                </Grid>
+
+            </StackPanel>
+
+            <Grid
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="30,0,0,0"
+                Background="LightYellow">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Height="AUTO"
+                    Margin="0,20"
+                    Background="Transparent">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="0,0,0,0"
+                        BorderThickness="1">
+
+                        <TextBlock
+                            Width="AUTO"
+                            Height="AUTO"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            FontSize="30"
+                            Foreground="Black"
+                            Text="局名 (リモート1)"
+                            TextAlignment="Center" />
+                    </Border>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Width="200"
+                        Margin="0,0,0,0">
+
+                        <Button
+                            x:Name="btnSelfReg"
+                            VerticalAlignment="Stretch"
+                            BorderBrush="Blue"
+                            BorderThickness="1"
+                            Content="自局登録"
+                            FontSize="40"
+                            Foreground="Black"
+                            PreviewMouseDown="btnSelfReg_PreviewMouseDown"
+                            PreviewMouseMove="btnSelfReg_PreviewMouseMove"
+                            PreviewStylusDown="btnSelfReg_PreviewStylusDown"
+                            PreviewStylusMove="btnSelfReg_PreviewStylusMove"
+                            PreviewTouchDown="btnSelfReg_PreviewTouchDown"
+                            PreviewTouchMove="btnSelfReg_PreviewTouchMove"
+                            Style="{StaticResource ClickableButtonStyle3}" />
+                    </Border>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Width="200"
+                        Margin="0,0,0,0">
+
+                        <Button
+                            x:Name="btnStationDB"
+                            VerticalAlignment="Stretch"
+                            HorizontalContentAlignment="Center"
+                            BorderBrush="Blue"
+                            BorderThickness="1"
+                            Content="自局DB"
+                            FontSize="40"
+                            Foreground="Black"
+                            PreviewMouseDown="btnStationDB_PreviewMouseDown"
+                            PreviewMouseMove="btnStationDB_PreviewMouseMove"
+                            PreviewStylusDown="btnStationDB_PreviewStylusDown"
+                            PreviewStylusMove="btnStationDB_PreviewStylusMove"
+                            PreviewTouchDown="btnStationDB_PreviewTouchDown"
+                            PreviewTouchMove="btnStationDB_PreviewTouchMove"
+                            Style="{StaticResource ClickableButtonStyle3}" />
+                    </Border>
+
+                </Grid>
+
+                <Grid
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Height="AUTO"
+                    Margin="0,0,0,0"
+                    VerticalAlignment="Center"
+                    Background="Transparent">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="10"
+                        Background="{Binding LowSpeedBtnColor}"
+                        BorderBrush="Blue"
+                        BorderThickness="1"
+                        CornerRadius="5">
+
+                        <Button
+                            x:Name="btnHighSpeed"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Content="高速"
+                            FontSize="40"
+                            Foreground="Black"
+                            PreviewMouseDown="btnHighSpeedBtnMainPage_PreviewMouseDown"
+                            PreviewMouseMove="btnHighSpeedBtnMainPage_PreviewMouseMove"
+                            PreviewStylusDown="btnHighSpeedBtnMainPage_PreviewStylusDown"
+                            PreviewStylusMove="btnHighSpeedBtnMainPage_PreviewStylusMove"
+                            PreviewTouchDown="btnHighSpeedBtnMainPage_PreviewTouchDown"
+                            PreviewTouchMove="btnHighSpeedBtnMainPage_PreviewTouchMove"
+                            Style="{StaticResource ConnectButtonStyle}" />
+                    </Border>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="10"
+                        Background="{Binding HighSpeedBtnColor}"
+                        BorderBrush="Blue"
+                        BorderThickness="1"
+                        CornerRadius="5">
+
+                        <Button
+                            x:Name="btnLowSpeed"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Content="低速"
+                            FontSize="40"
+                            Foreground="Black"
+                            PreviewMouseDown="btnLowSpeedBtnMainPage_PreviewMouseDown"
+                            PreviewMouseMove="btnLowSpeedBtnMainPage_PreviewMouseMove"
+                            PreviewStylusDown="btnLowSpeedBtnMainPage_PreviewStylusDown"
+                            PreviewStylusMove="btnLowSpeedBtnMainPage_PreviewStylusMove"
+                            PreviewTouchDown="btnLowSpeedBtnMainPage_PreviewTouchDown"
+                            PreviewTouchMove="btnLowSpeedBtnMainPage_PreviewTouchMove"
+                            Style="{StaticResource ConnectButtonStyle}" />
+                    </Border>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Margin="10"
+                        Background="{Binding InchingSpeedBtnColor}"
+                        BorderBrush="Blue"
+                        BorderThickness="1"
+                        CornerRadius="5">
+
+                        <Button
+                            x:Name="btnInching"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            HorizontalContentAlignment="Center"
+                            Content="寸動"
+                            FontSize="40"
+                            Foreground="Black"
+                            PreviewMouseDown="btnInchingSpeedBtnMainPage_PreviewMouseDown"
+                            PreviewMouseMove="btnInchingSpeedBtnMainPage_PreviewMouseMove"
+                            PreviewStylusDown="btnInchingSpeedBtnMainPage_PreviewStylusDown"
+                            PreviewStylusMove="btnInchingSpeedBtnMainPage_PreviewStylusMove"
+                            PreviewTouchDown="btnInchingSpeedBtnMainPage_PreviewTouchDown"
+                            PreviewTouchMove="btnInchingSpeedBtnMainPage_PreviewTouchMove"
+                            Style="{StaticResource ConnectButtonStyle}" />
+                    </Border>
+
+                </Grid>
+
+                <Grid
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Margin="0,0"
+                    Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0">
+                        <Button
+                            x:Name="btnUpArrowMainPage"
+                            Width="152"
+                            Height="152"
+                            Margin="5"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            PreviewMouseDown="btnUpArrowMainPage_PreviewMouseDown"
+                            PreviewMouseMove="btnUpArrowMainPage_PreviewMouseMove"
+                            PreviewMouseUp="btnUpArrowMainPage_PreviewMouseUp"
+                            PreviewStylusDown="btnUpArrowMainPage_PreviewStylusDown"
+                            PreviewStylusMove="btnUpArrowMainPage_PreviewStylusMove"
+                            PreviewStylusUp="btnUpArrowMainPage_PreviewStylusUp"
+                            PreviewTouchDown="btnUpArrowMainPage_PreviewTouchDown"
+                            PreviewTouchMove="btnUpArrowMainPage_PreviewTouchMove"
+                            PreviewTouchUp="btnUpArrowMainPage_PreviewTouchUp"
+                            Style="{StaticResource ClickableButtonStyleUP}"
+                            Stylus.IsFlicksEnabled="False"
+                            Stylus.IsPressAndHoldEnabled="False" />
+                    </Border>
+
+                    <Button
+                        x:Name="btnDownArrowMainPage"
+                        Grid.Column="1"
+                        Width="152"
+                        Height="152"
+                        Margin="5"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        PreviewMouseDown="btnDownArrowMainPage_PreviewMouseDown"
+                        PreviewMouseMove="btnDownArrowMainPage_PreviewMouseMove"
+                        PreviewMouseUp="btnDownArrowMainPage_PreviewMouseUp"
+                        PreviewStylusDown="btnDownArrowMainPage_PreviewStylusDown"
+                        PreviewStylusMove="btnDownArrowMainPage_PreviewStylusMove"
+                        PreviewStylusUp="btnDownArrowMainPage_PreviewStylusUp"
+                        PreviewTouchDown="btnDownArrowMainPage_PreviewTouchDown"
+                        PreviewTouchMove="btnDownArrowMainPage_PreviewTouchMove"
+                        PreviewTouchUp="btnDownArrowMainPage_PreviewTouchUp"
+                        Style="{StaticResource ClickableButtonStyleDOWN}"
+                        Stylus.IsFlicksEnabled="False"
+                        Stylus.IsPressAndHoldEnabled="False" />
+
+                    <Button
+                        x:Name="btnCCWArrowMainPage"
+                        Grid.Column="2"
+                        Width="152"
+                        Height="152"
+                        Margin="20,0,5,0"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        PreviewMouseDown="btnCCWArrowMainPage_PreviewMouseDown"
+                        PreviewMouseMove="btnCCWArrowMainPage_PreviewMouseMove"
+                        PreviewMouseUp="btnCCWArrowMainPage_PreviewMouseUp"
+                        PreviewStylusDown="btnCCWArrowMainPage_PreviewStylusDown"
+                        PreviewStylusMove="btnCCWArrowMainPage_PreviewStylusMove"
+                        PreviewStylusUp="btnCCWArrowMainPage_PreviewStylusUp"
+                        PreviewTouchDown="btnCCWArrowMainPage_PreviewTouchDown"
+                        PreviewTouchMove="btnCCWArrowMainPage_PreviewTouchMove"
+                        PreviewTouchUp="btnCCWArrowMainPage_PreviewTouchUp"
+                        Style="{StaticResource ClickableButtonStyleCCW}"
+                        Stylus.IsFlicksEnabled="False"
+                        Stylus.IsPressAndHoldEnabled="False">
+
+                        <!--<Image Width="150" Source="\RESOURCES\CCW ROTATE.png" />-->
+
+                    </Button>
+
+                    <Button
+                        x:Name="btnCWArrowMainPage"
+                        Grid.Column="3"
+                        Width="152"
+                        Height="152"
+                        Margin="5"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        PreviewMouseDown="btnCWArrowMainPage_PreviewMouseDown"
+                        PreviewMouseMove="btnCWArrowMainPage_PreviewMouseMove"
+                        PreviewMouseUp="btnCWArrowMainPage_PreviewMouseUp"
+                        PreviewStylusDown="btnCWArrowMainPage_PreviewStylusDown"
+                        PreviewStylusMove="btnCWArrowMainPage_PreviewStylusMove"
+                        PreviewStylusUp="btnCWArrowMainPage_PreviewStylusUp"
+                        PreviewTouchDown="btnCWArrowMainPage_PreviewTouchDown"
+                        PreviewTouchMove="btnCWArrowMainPage_PreviewTouchMove"
+                        PreviewTouchUp="btnCWArrowMainPage_PreviewTouchUp"
+                        Style="{StaticResource ClickableButtonStyleCW}"
+                        Stylus.IsFlicksEnabled="False"
+                        Stylus.IsPressAndHoldEnabled="False" />
+
+                </Grid>
+
+                <StackPanel
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Margin="0,10,5,10"
+                    Background="Transparent"
+                    Orientation="Horizontal">
+
+                    <Grid>
+                        <Button
+                            x:Name="btnUpDownArrowPositionSetMainPage"
+                            Width="AUTO"
+                            Height="AUTO"
+                            Margin="15,5"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            Content="位置決め"
+                            FontSize="40"
+                            PreviewMouseDown="btnElevationAngleSetSlaveMainPage_PreviewMouseDown"
+                            PreviewMouseMove="btnElevationAngleSetSlaveMainPage_PreviewMouseMove"
+                            PreviewStylusDown="btnElevationAngleSetSlaveMainPage_PreviewStylusDown"
+                            PreviewStylusMove="btnElevationAngleSetSlaveMainPage_PreviewStylusMove"
+                            PreviewTouchDown="btnElevationAngleSetSlaveMainPage_PreviewTouchDown"
+                            PreviewTouchMove="btnElevationAngleSetSlaveMainPage_PreviewTouchMove"
+                            Style="{StaticResource ClickableButtonStyle}" />
+
+                        <Canvas
+                            Width="155"
+                            Height="55"
+                            Background="#c0ffffe0"
+                            Visibility="{Binding UpDownArrowPositionSetMainPageEnabled}" />
+                    </Grid>
+                    <Grid>
+                        <!--  Border containing the TextBox  -->
+                        <Border
+                            Margin="15,5"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Background="White"
+                            BorderBrush="Blue"
+                            BorderThickness="1"
+                            CornerRadius="5">
+                            <TextBlock
+                                Width="80"
+                                Height="60"
+                                Padding="2"
+                                VerticalAlignment="Center"
+                                FontSize="40"
+                                Foreground="Black"
+                                PreviewMouseDown="OnElevationAngleInputSlaveTextBoxGotFocus"
+                                PreviewStylusDown="OnElevationAngleInputSlaveTextBoxGotFocus"
+                                PreviewTouchDown="OnElevationAngleInputSlaveTextBoxGotFocus"
+                                Text="{Binding ElevationAngleInputSlave}"
+                                TextAlignment="Center" />
+                        </Border>
+
+                    </Grid>
+
+                </StackPanel>
+
+                <StackPanel
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
+                    Margin="5,10,0,10"
+                    Background="Transparent"
+                    Orientation="Horizontal">
+
+                    <Grid>
+                        <Button
+                            x:Name="btnRotatePositionSetMainPage"
+                            Width="AUTO"
+                            Height="AUTO"
+                            Margin="15,5"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            Content="位置決め"
+                            FontSize="40"
+                            Foreground="Black"
+                            PreviewMouseDown="btnAzimuthAngleSetSlaveMainPage_PreviewMouseDown"
+                            PreviewMouseMove="btnAzimuthAngleSetSlaveMainPage_PreviewMouseMove"
+                            PreviewStylusDown="btnAzimuthAngleSetSlaveMainPage_PreviewStylusDown"
+                            PreviewStylusMove="btnAzimuthAngleSetSlaveMainPage_PreviewStylusMove"
+                            PreviewTouchDown="btnAzimuthAngleSetSlaveMainPage_PreviewTouchDown"
+                            PreviewTouchMove="btnAzimuthAngleSetSlaveMainPage_PreviewTouchMove"
+                            Style="{StaticResource ClickableButtonStyle}" />
+
+                        <Canvas
+                            Width="155"
+                            Height="55"
+                            Background="#c0ffffe0"
+                            Visibility="{Binding RotatePositionSetMainPageEnabled}" />
+                    </Grid>
+
+                    <Border
+                        Margin="15,5"
+                        Background="White"
+                        BorderBrush="Blue"
+                        BorderThickness="1"
+                        CornerRadius="5">
+
+                        <TextBlock
+                            Width="80"
+                            Height="60"
+                            Padding="2"
+                            VerticalAlignment="Center"
+                            FontSize="40"
+                            Foreground="Black"
+                            PreviewMouseDown="OnAzimuthAngleInputSlaveTextBoxGotFocus"
+                            PreviewStylusDown="OnAzimuthAngleInputSlaveTextBoxGotFocus"
+                            PreviewTouchDown="OnAzimuthAngleInputSlaveTextBoxGotFocus"
+                            Text="{Binding AzimuthAngleInputSlave}"
+                            TextAlignment="Center" />
+
+                    </Border>
+
+                </StackPanel>
+
+                <StackPanel
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Margin="0,10,5,10"
+                    Background="Transparent"
+                    Orientation="Vertical">
+
+                    <Button
+                        x:Name="btnSaveAngleMainPage"
+                        Width="AUTO"
+                        Height="AUTO"
+                        Margin="15,5"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        HorizontalContentAlignment="Center"
+                        Content="角度保存"
+                        FontSize="40"
+                        PreviewMouseDown="btnSaveAngleMainPageSlaveMainPage_PreviewMouseDown"
+                        PreviewMouseUp="btnSaveAngleMainPageSlaveMainPage_PreviewMouseUp"
+                        PreviewMouseMove="btnSaveAngleMainPageSlaveMainPage_PreviewMouseMove"
+                        PreviewStylusDown="btnSaveAngleMainPageSlaveMainPage_PreviewStylusDown"
+                        PreviewStylusUp="btnSaveAngleMainPageSlaveMainPage_PreviewStylusUp"
+                        PreviewStylusMove="btnSaveAngleMainPageSlaveMainPage_PreviewStylusMove"
+                        PreviewTouchDown="btnSaveAngleMainPageSlaveMainPage_PreviewTouchDown"
+                        PreviewTouchUp="btnSaveAngleMainPageSlaveMainPage_PreviewTouchUp"
+                        PreviewTouchMove="btnSaveAngleMainPageSlaveMainPage_PreviewTouchMove"
+                        Style="{StaticResource ClickableButtonStyle}" />
+
+                </StackPanel>
+
+                <StackPanel
+                    Grid.Row="5"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
+                    Margin="5,10,0,10"
+                    Background="Transparent"
+                    Orientation="Vertical">
+
+                    <Button
+                        x:Name="btnLoadAngleMainPage"
+                        Width="AUTO"
+                        Height="AUTO"
+                        Margin="15,5"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        HorizontalContentAlignment="Center"
+                        Content="角度呼出し"
+                        FontSize="40"
+                        PreviewMouseDown="btnLoadLoadAngleMainPageSlaveMainPage_PreviewMouseDown"
+                        PreviewMouseUp="btnLoadLoadAngleMainPageSlaveMainPage_PreviewMouseUp"
+                        PreviewMouseMove="btnLoadLoadAngleMainPageSlaveMainPage_PreviewMouseMove"
+                        PreviewStylusDown="btnLoadLoadAngleMainPageSlaveMainPage_PreviewStylusDown"
+                        PreviewStylusUp="btnLoadLoadAngleMainPageSlaveMainPage_PreviewStylusUp"
+                        PreviewStylusMove="btnLoadLoadAngleMainPageSlaveMainPage_PreviewStylusMove"
+                        PreviewTouchDown="btnLoadLoadAngleMainPageSlaveMainPage_PreviewTouchDown"
+                        PreviewTouchUp="btnLoadLoadAngleMainPageSlaveMainPage_PreviewTouchUp"
+                        PreviewTouchMove="btnLoadLoadAngleMainPageSlaveMainPage_PreviewTouchMove"
+                        Style="{StaticResource ClickableButtonStyle}" />
+
+                </StackPanel>
+
+                <Grid
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Margin="0,10,0,0"
+                    Background="Transparent">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="AUTO" />
+                            <ColumnDefinition Width="AUTO" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="AUTO" />
+                            <ColumnDefinition Width="0.5*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="AUTO" />
+                            <RowDefinition Height="AUTO" />
+                        </Grid.RowDefinitions>
+
+                        <Button
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="0"
+                            Margin="10"
+                            VerticalContentAlignment="Center"
+                            Foreground="Black"
+                            PreviewMouseDown="MainPageUnitChangeCommandSlave_PreviewMouseDown"
+                            PreviewStylusDown="MainPageUnitChangeCommandSlave_PreviewStylusDown"
+                            PreviewTouchDown="MainPageUnitChangeCommandSlave_PreviewTouchDown"
+                            Style="{StaticResource ClickableButtonStyle}">
+
+                            <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                                <TextBlock
+                                    Margin="10,0"
+                                    FontSize="30"
+                                    Text="ユニット"
+                                    TextAlignment="Center" />
+                                <TextBlock
+                                    Margin="10,0"
+                                    FontSize="30"
+                                    Text="{Binding UnitMainSlave}"
+                                    TextAlignment="Center" />
+
+                            </StackPanel>
+
+                        </Button>
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Width="70"
+                            VerticalAlignment="Center"
+                            FontSize="30"
+                            Foreground="Black"
+                            Text="緯度"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Margin="10,10"
+                            Background="Black"
+                            BorderBrush="Blue"
+                            CornerRadius="5">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                Foreground="White"
+                                Text="{Binding Latitude102}" />
+                        </Border>
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            VerticalAlignment="Center"
+                            FontSize="30"
+                            Foreground="Black"
+                            Text="標高(m)"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="4"
+                            Margin="10,10"
+                            Background="Black"
+                            BorderBrush="Blue"
+                            CornerRadius="5">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                Foreground="White"
+                                Text="{Binding Elevation104}" />
+                        </Border>
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            VerticalAlignment="Center"
+                            FontSize="30"
+                            Foreground="Black"
+                            Text="経度"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Margin="10,10"
+                            Background="Black"
+                            BorderBrush="Blue"
+                            CornerRadius="5">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                Foreground="White"
+                                Text="{Binding Longitude103}" />
+                        </Border>
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            VerticalAlignment="Center"
+                            FontSize="30"
+                            Foreground="Black"
+                            Text="設置方位(度)"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="4"
+                            Margin="10,10"
+                            Background="Black"
+                            BorderBrush="Blue"
+                            CornerRadius="5">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                Foreground="White"
+                                Text="{Binding InstallationDirection105}" />
+                        </Border>
+
+                    </Grid>
+
+                </Grid>
+
+                <Grid
+                    Grid.Row="7"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Margin="0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="180" />
+                        <ColumnDefinition Width="450" MaxWidth="450" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock
+                        Grid.Column="0"
+                        Margin="0,0,0,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="30"
+                        Text="無線機NAME" />
+
+                    <TextBlock
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="30"
+                        Text="{Binding SlaveNameTxt}"
+                        TextAlignment="Center" />
+
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="30"
+                        Text="無線機IP" />
+
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        Text="{Binding SlaveIPAddressTxt}"
+                        TextAlignment="Center" />
+
+                </Grid>
+
+                <Canvas
+                    Grid.Row="1"
+                    Grid.RowSpan="7"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Background="#80ffffe0"
+                    Visibility="{Binding ControllerAccess}" />
+            </Grid>
+
+            <Grid
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0,0,0,0"
+                Background="LightYellow">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                    <RowDefinition Height="AUTO" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="5,0,5,1"
+                    VerticalAlignment="Bottom"
+                    FontSize="30"
+                    Text="RSSI"
+                    TextAlignment="Center" />
+
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Margin="5,0,5,0"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    FontSize="30"
+                    Text="府仰角"
+                    TextAlignment="Center" />
+
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    Margin="5,0,5,0"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    FontSize="30"
+                    Text="水平角"
+                    TextAlignment="Center" />
+
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="5"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    FontSize="30"
+                    Text="現在値"
+                    TextAlignment="Center" />
+                <Border
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="5"
+                    Background="Black"
+                    CornerRadius="5">
+                    <TextBlock
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        FontSize="40"
+                        Foreground="White"
+                        Text="{Binding CurrentValueMasterRSSI}"
+                        TextAlignment="Center" />
+                </Border>
+                <Border
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Margin="5"
+                    Background="Black"
+                    CornerRadius="5">
+                    <TextBlock
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        FontSize="40"
+                        Foreground="White"
+                        Text="{Binding CurrentValueMasterElevation}"
+                        TextAlignment="Center" />
+                </Border>
+                <Border
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    Margin="5"
+                    Background="Black"
+                    CornerRadius="5">
+                    <TextBlock
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        FontSize="40"
+                        Foreground="White"
+                        Text="{Binding CurrentValueMasterAzimuth}"
+                        TextAlignment="Center" />
+                </Border>
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Margin="5"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    FontSize="30"
+                    Text="ピーク値"
+                    TextAlignment="Center" />
+                <Border
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Margin="5"
+                    Background="Black"
+                    CornerRadius="5">
+                    <TextBlock
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        FontSize="40"
+                        Foreground="White"
+                        Text="{Binding PeakValueMasterRSSI}"
+                        TextAlignment="Center" />
+                </Border>
+                <Border
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Margin="5"
+                    Background="Black"
+                    CornerRadius="5">
+                    <TextBlock
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        FontSize="40"
+                        Foreground="White"
+                        Text="{Binding PeakValueMasterElevation}"
+                        TextAlignment="Center" />
+                </Border>
+                <Border
+                    Grid.Row="2"
+                    Grid.Column="3"
+                    Margin="5"
+                    Background="Black"
+                    CornerRadius="5">
+                    <TextBlock
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        FontSize="40"
+                        Foreground="White"
+                        Text="{Binding PeakValueMasterAzimuth}"
+                        TextAlignment="Center" />
+                </Border>
+                <Grid
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="0,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        Foreground="Black"
+                        Text="局名"
+                        TextAlignment="Center" />
+
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Height="65"
+                        MaxWidth="250"
+                        MaxHeight="65"
+                        Margin="0,0,0,0"
+                        VerticalAlignment="Center"
+                        Background="#e6e6ca"
+                        FontSize="25"
+                        Foreground="Black"
+                        Text="{Binding MasterName}"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap" />
+
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="0,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="25"
+                        Foreground="Black"
+                        Text="IP"
+                        TextAlignment="Center" />
+
+                    <TextBlock
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Height="50"
+                        MaxWidth="250"
+                        MaxHeight="50"
+                        Margin="0,0,0,0"
+                        Padding="6"
+                        VerticalAlignment="Center"
+                        Background="#e6e6ca"
+                        FontSize="25"
+                        Foreground="Black"
+                        Text="{Binding MasterIPAddressTxt}"
+                        TextAlignment="Center" />
+                </Grid>
+
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
+                    Height="75"
+                    Margin="20,10,20,5"
+                    VerticalAlignment="Center"
+                    BorderBrush="Blue"
+                    BorderThickness="1"
+                    Content="基地局登録"
+                    FontSize="40"
+                    Foreground="Black"
+                    PreviewMouseDown="btnBaseStationRegistration_PreviewMouseDown"
+                    PreviewMouseMove="btnBaseStationRegistration_PreviewMouseMove"
+                    PreviewStylusDown="btnBaseStationRegistration_PreviewStylusDown"
+                    PreviewStylusMove="btnBaseStationRegistration_PreviewStylusMove"
+                    PreviewTouchDown="btnBaseStationRegistration_PreviewTouchDown"
+                    PreviewTouchMove="btnBaseStationRegistration_PreviewTouchMove"
+                    Style="{StaticResource ClickableButtonStyle3}" />
+
+                <Grid
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Margin="0,10,0,0"
+                    Background="Transparent">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="1.3*" />
+                        <ColumnDefinition Width="0.9*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="90" />
+                    </Grid.RowDefinitions>
+
+
+                    <Grid Grid.Row="0" Grid.Column="0">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+
+                        <Border
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="0"
+                            Width="AUTO"
+                            Margin="5"
+                            Background="{Binding MasterStatusColor}"
+                            BorderBrush="#707070"
+                            BorderThickness="1"
+                            CornerRadius="5">
+
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                Foreground="Black"
+                                Text="{Binding MasterStatusText}" />
+                        </Border>
+
+                    </Grid>
+
+                    <Grid Grid.Row="0" Grid.Column="1">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.8*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Width="260"
+                            MaxHeight="200"
+                            Padding="5"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="#e6e6ca"
+                            FontSize="20"
+                            Text="MODULATION"
+                            TextAlignment="Center" />
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Width="260"
+                            Height="45"
+                            MaxWidth="260"
+                            MaxHeight="45"
+                            Padding="5"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="#e6e6ca"
+                            FontSize="22"
+                            FontWeight="Bold"
+                            Text="{Binding MODMaster}"
+                            TextAlignment="Center" />
+                    </Grid>
+
+                    <Grid Grid.Row="0" Grid.Column="2">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.8*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Width="200"
+                            Padding="5"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="#e6e6ca"
+                            FontSize="20"
+                            Text="RSSI RATE"
+                            TextAlignment="Center" />
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Width="200"
+                            Height="45"
+                            MaxWidth="200"
+                            MaxHeight="445"
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="#e6e6ca"
+                            FontSize="30"
+                            Text="{Binding RSSIRateMaster, StringFormat='{}{0} Mbps'}"
+                            TextAlignment="Center" />
+                    </Grid>
+                </Grid>
+
+                <Grid
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Margin="0,10,0,10">
+                    <!--  Background="AntiqueWhite">  -->
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Width="140"
+                        Height="140"
+                        Margin="20,0"
+                        Background="{Binding HomeBtnColor}">
+                        <Button
+                            Width="140"
+                            Height="140"
+                            VerticalAlignment="Center"
+                            FontSize="40"
+                            Foreground="Black"
+                            PreviewMouseDown="btnHomePositionMainPage_PreviewMouseDown"
+                            PreviewMouseMove="btnHomePositionMainPage_PreviewMouseMove"
+                            PreviewMouseUp="btnHomePositionMainPage_PreviewMouseUp"
+                            PreviewStylusDown="btnHomePositionMainPage_PreviewStylusDown"
+                            PreviewStylusMove="btnHomePositionMainPage_PreviewStylusMove"
+                            PreviewStylusUp="btnHomePositionMainPage_PreviewStylusUp"
+                            PreviewTouchDown="btnHomePositionMainPage_PreviewTouchDown"
+                            PreviewTouchMove="btnHomePositionMainPage_PreviewTouchMove"
+                            PreviewTouchUp="btnHomePositionMainPage_PreviewTouchUp"
+                            Style="{StaticResource ClickableButtonStyle1}">
+
+                            <TextBlock Margin="10" TextAlignment="Center">
+                                原点
+                            </TextBlock>
+
+                        </Button>
+                    </Border>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Width="140"
+                        Height="140"
+                        Margin="20,0"
+                        Background="{Binding DirectionSetBtnColor}">
+                        <Button
+                            Width="140"
+                            Height="140"
+                            VerticalAlignment="Center"
+                            Content="方調"
+                            FontSize="40"
+                            Foreground="Black"
+                            PreviewMouseDown="btnDirectionSearchMainPage_PreviewMouseDown"
+                            PreviewMouseMove="btnDirectionSearchMainPage_PreviewMouseMove"
+                            PreviewMouseUp="btnDirectionSearchMainPage_PreviewMouseUp"
+                            PreviewStylusDown="btnDirectionSearchMainPage_PreviewStylusDown"
+                            PreviewStylusMove="btnDirectionSearchMainPage_PreviewStylusMove"
+                            PreviewStylusUp="btnDirectionSearchMainPage_PreviewStylusUp"
+                            PreviewTouchDown="btnDirectionSearchMainPage_PreviewTouchDown"
+                            PreviewTouchMove="btnDirectionSearchMainPage_PreviewTouchMove"
+                            PreviewTouchUp="btnDirectionSearchMainPage_PreviewTouchUp"
+                            Style="{StaticResource ClickableButtonStyle1}" />
+                    </Border>
+
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Width="140"
+                        Height="140"
+                        Margin="20,0"
+                        Background="{Binding PeakBtnColor}">
+
+                        <Button
+                            Width="140"
+                            Height="140"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            Foreground="Black"
+                            PreviewMouseDown="btnPeakSearchMainPage_PreviewMouseDown"
+                            PreviewMouseMove="btnPeakSearchMainPage_PreviewMouseMove"
+                            PreviewMouseUp="btnPeakSearchMainPage_PreviewMouseUp"
+                            PreviewStylusDown="btnPeakSearchMainPage_PreviewStylusDown"
+                            PreviewStylusMove="btnPeakSearchMainPage_PreviewStylusMove"
+                            PreviewStylusUp="btnPeakSearchMainPage_PreviewStylusUp"
+                            PreviewTouchDown="btnPeakSearchMainPage_PreviewTouchDown"
+                            PreviewTouchMove="btnPeakSearchMainPage_PreviewTouchMove"
+                            PreviewTouchUp="btnPeakSearchMainPage_PreviewTouchUp"
+                            Style="{StaticResource ClickableButtonStyle1}">
+
+                            <TextBlock TextAlignment="Center">
+                                <Run FontSize="{Binding PeakSearchButtonTextFirstLineFontSize}" Text="{Binding PeakSearchButtonTextFirstLine}" />
+                                <LineBreak />
+                                <Run FontSize="{Binding PeakSearchButtonTextSecondLineFontSize}" Text="{Binding PeakSearchButtonTextSecondLine}" />
+                            </TextBlock>
+
+                        </Button>
+
+                    </Border>
+
+                </Grid>
+
+                <Button
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Width="500"
+                    Height="120"
+                    Margin="0,0,0,0"
+                    VerticalAlignment="Center"
+                    Content="停止"
+                    FontSize="60"
+                    FontWeight="ExtraBold"
+                    PreviewMouseDown="StopSlaveButton_PreviewMouseDown"
+                    PreviewMouseMove="StopSlaveButton_PreviewMouseMove"
+                    PreviewStylusDown="StopSlaveButton_PreviewStylusDown"
+                    PreviewStylusMove="StopSlaveButton_PreviewStylusMove"
+                    PreviewTouchDown="StopSlaveButton_PreviewTouchDown"
+                    PreviewTouchMove="StopSlaveButton_PreviewTouchMove"
+                    Style="{StaticResource ClickableButtonStyle4}" />
+
+                <Canvas
+                    Grid.Row="0"
+                    Grid.RowSpan="7"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Background="#80ffffe0"
+                    Visibility="{Binding ControllerAccess}" />
+
+                <Grid
+                    Grid.Row="7"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4">
+                    <!--  Background="LightSkyBlue">  -->
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border
+                        Width="400"
+                        Height="100"
+                        Margin="0,0,0,0">
+                        <Button
+                            x:Name="btnSystemSetting"
+                            Grid.Column="0"
+                            Height="70"
+                            Margin="0"
+                            Padding="5"
+                            VerticalAlignment="Center"
+                            BorderBrush="Blue"
+                            BorderThickness="1"
+                            Content="システム設定"
+                            FontSize="40"
+                            Foreground="Black"
+                            PreviewMouseDown="btnSystemSetting_PreviewMouseDown"
+                            PreviewMouseMove="btnSystemSetting_PreviewMouseMove"
+                            PreviewStylusDown="btnSystemSetting_PreviewStylusDown"
+                            PreviewStylusMove="btnSystemSetting_PreviewStylusMove"
+                            PreviewTouchDown="btnSystemSetting_PreviewTouchDown"
+                            PreviewTouchMove="btnSystemSetting_PreviewTouchMove"
+                            Style="{StaticResource ClickableButtonStyle3}" />
+
+                    </Border>
+
+                </Grid>
+
+            </Grid>
+
+            <Grid
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="0,-10,0,0"
+                Background="Gray">
+
+                <TextBlock
+                    Height="70"
+                    MaxWidth="600"
+                    MaxHeight="50"
+                    Margin="550,0,0,0"
+                    HorizontalAlignment="Left"
+                    FontSize="40"
+                    Foreground="White"
+                    Text="{Binding ReceivedData}"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap" />
+
+                <TextBlock
+                    x:Name="txtBlockAlarm"
+                    Height="60"
+                    MaxWidth="1070"
+                    MaxHeight="60"
+                    HorizontalAlignment="Center"
+                    FontSize="40"
+                    Foreground="White"
+                    Text="{Binding SlaveAlarmData}"
+                    TextAlignment="Center"
+                    TextWrapping="NoWrap" />
+
+            </Grid>
+
+            <Image
+                Grid.RowSpan="3"
+                Grid.ColumnSpan="3"
+                MaxWidth="500"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                gif:AnimationBehavior.SourceUri="\RESOURCES\LOADING SCREEN.gif"
+                Visibility="{Binding LoadingScreenImgVisibility}" />
+
+        </Grid>
+
+    </Viewbox>
+</UserControl>

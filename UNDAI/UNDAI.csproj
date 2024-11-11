@@ -1,0 +1,231 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackAsTool>False</PackAsTool>
+    <PackageIcon>UNDAI.png</PackageIcon>
+    <Title>UNDAI</Title>
+    <Authors>HARITH HANSAKA</Authors>
+    <ApplicationIcon>UNDAI.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="RESOURCES\CCW ROTATE.gif" />
+    <None Remove="RESOURCES\CCW ROTATE.png" />
+    <None Remove="RESOURCES\CCW ROTATE2.gif" />
+    <None Remove="RESOURCES\CW ROTATE.gif" />
+    <None Remove="RESOURCES\CW ROTATE.png" />
+    <None Remove="RESOURCES\CW ROTATE1.png" />
+    <None Remove="RESOURCES\CW ROTATE2.gif" />
+    <None Remove="RESOURCES\DOWN ARROW.gif" />
+    <None Remove="RESOURCES\DOWN ARROW.png" />
+    <None Remove="RESOURCES\DOWN ARROW2.gif" />
+    <None Remove="RESOURCES\LOADING SCREEN.gif" />
+    <None Remove="RESOURCES\RESET UNDAI.gif" />
+    <None Remove="RESOURCES\RESET UNDAI.png" />
+    <None Remove="RESOURCES\RESTART UNDAI.gif" />
+    <None Remove="RESOURCES\UP ARROW.gif" />
+    <None Remove="RESOURCES\UP ARROW.png" />
+    <None Remove="RESOURCES\UP ARROW2.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="RESOURCES\CCW ROTATE.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="RESOURCES\CW ROTATE.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="RESOURCES\RESET UNDAI.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="RESOURCES\RESTART UNDAI.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="UNDAI.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="RESOURCES\LOADING SCREEN.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="EXCEPTIONS\" />
+  </ItemGroup>
+
+    <ItemGroup>
+	    <None Remove="RESOURCES\MAPDATA.csv" />
+    </ItemGroup>
+
+    <ItemGroup>
+	    <None Remove="RESOURCES\MAP DATA\**\*.*" />
+    </ItemGroup>
+
+    <ItemGroup>
+	    <Content Include="RESOURCES\MAPDATA.csv">
+		    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	    </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+	    <Content Include="RESOURCES\MAP DATA\**\*.*">
+		    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	    </Content>
+    </ItemGroup>
+	
+  <ItemGroup>
+    <PackageReference Include="AdonisUI" Version="1.17.1" />
+    <PackageReference Include="MaterialDesignColors" Version="3.1.1-ci753" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.1.1-ci753" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+    <PackageReference Include="ModernWpfUI" Version="0.9.7-preview.2" />
+    <PackageReference Include="OxyPlot.Wpf" Version="2.2.0" />
+    <PackageReference Include="WPF-UI" Version="4.0.0-rc.2" />
+    <PackageReference Include="XamlAnimatedGif" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="RESOURCES\CCW ROTATE.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="RESOURCES\CCW ROTATE2.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="RESOURCES\CW ROTATE.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="RESOURCES\CW ROTATE2.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="RESOURCES\DOWN ARROW.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="RESOURCES\DOWN ARROW.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="RESOURCES\DOWN ARROW2.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="RESOURCES\UP ARROW.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="RESOURCES\UP ARROW.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="RESOURCES\UP ARROW2.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UNDAI.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="COMMANDS\MASTER\UpDownMouseRelayMasterStationDBCommand.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="VIEWS\BASE\NumericKeyboardWindowMainSlave.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\BASE\NumericKeyboardWindowSelfRegSlave.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\BASE\NumericKeyboardWindowStationDBSlave.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\BASE\NumericKeyboardWindowBaseStationRegistrationSlave.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\BASE\NumericKeyboardWindowSystemSettingSlave.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\BASE\NumericKeyboardWindowSystemSettingMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\BASE\NumericKeyboardWindowSubstationDB4.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\BASE\NumericKeyboardWindowSubstationDB3.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\BASE\NumericKeyboardWindowSubstationDB2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\BASE\NumericKeyboardWindowSubstationDB1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\BASE\NumericKeyboardWindowSubstationReg.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\BASE\NumericKeyboardWindowStationDBMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\BASE\NumericKeyboardWindowSelfRegMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\BASE\SystemSettingAccessPIN.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\BASE\UNDAIRestartMessageBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\MASTER\AlarmHistoryMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\MASTER\SubstationDB4PageMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\MASTER\SubstationDB3PageMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\MASTER\SystemResetSettingMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\SLAVE\AlarmHistorySlave.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\SLAVE\MainPageSlave.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\SLAVE\SelfRegPageSlave.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\SLAVE\StationDBPageSlave.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\SLAVE\BaseStationRegistrationPageSlave.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\SLAVE\SystemResetSettingSlave.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\SLAVE\SystemSettingSlave.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="UNDAI.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

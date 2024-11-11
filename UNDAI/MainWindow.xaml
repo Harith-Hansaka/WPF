@@ -1,0 +1,89 @@
+﻿<Window
+    x:Class="UNDAI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+    xmlns:local="clr-namespace:UNDAI"
+    xmlns:local1="clr-namespace:UNDAI.VIEWS.BASE"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewsMaster="clr-namespace:UNDAI.VIEWS.MASTER"
+    xmlns:viewsSlave="clr-namespace:UNDAI.VIEWS.SLAVE"
+    xmlns:vmsMaster="clr-namespace:UNDAI.VIEWMODELS.MASTER"
+    xmlns:vmsSlave="clr-namespace:UNDAI.VIEWMODELS.SLAVE"
+    Title="UNDAI"
+    Width="1920"
+    Height="1200"
+    ResizeMode="CanResize"
+    WindowState="Maximized"
+    mc:Ignorable="d">
+
+    <Grid Background="LightYellow">
+
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type vmsMaster:MainPageMasterViewModel}">
+                <viewsMaster:MainPageMaster />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsMaster:SelfRegPageMasterViewModel}">
+                <viewsMaster:SelfRegPageMaster />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsMaster:StationDBPageMasterViewModel}">
+                <viewsMaster:StationDBPageMaster />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsSlave:MainPageSlaveViewModel}">
+                <viewsSlave:MainPageSlave />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsMaster:SystemSettingMasterViewModel}">
+                <viewsMaster:SystemSettingMaster />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsMaster:SubstationDB1MasterViewModel}">
+                <viewsMaster:SubstationDB1PageMaster />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsMaster:SubstationDB2MasterViewModel}">
+                <viewsMaster:SubstationDB2PageMaster />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsMaster:SubstationDB3MasterViewModel}">
+                <viewsMaster:SubstationDB3PageMaster />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsMaster:SubstationDB4MasterViewModel}">
+                <viewsMaster:SubstationDB4PageMaster />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsMaster:SubstationRegistrationMasterViewModel}">
+                <viewsMaster:SubstationRegistrationPageMaster />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsMaster:AlarmHistoryMasterViewModel}">
+                <viewsMaster:AlarmHistoryMaster />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsMaster:SystemResetSettingMasterViewModel}">
+                <viewsMaster:SystemResetSettingMaster />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsSlave:SystemSettingSlaveViewModel}">
+                <viewsSlave:SystemSettingSlave />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsSlave:BaseStationRegistrationSlaveViewModel}">
+                <viewsSlave:BaseStationRegistrationPageSlave />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsSlave:SelfRegPageSlaveViewModel}">
+                <viewsSlave:SelfRegPageSlave />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsSlave:StationDBPageSlaveViewModel}">
+                <viewsSlave:StationDBPageSlave />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsSlave:AlarmHistorySlaveViewModel}">
+                <viewsSlave:AlarmHistorySlave />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsSlave:SystemResetSettingSlaveViewModel}">
+                <viewsSlave:SystemResetSettingSlave />
+            </DataTemplate>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="119*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <ContentControl Grid.ColumnSpan="2" Content="{Binding CurrentViewModel}" />
+
+    </Grid>
+
+
+</Window>

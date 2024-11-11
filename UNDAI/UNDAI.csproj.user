@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>D:\1HARITH DATA DRIVE\PROJECTS\UNDAI\VS CODES\241108\UNDAI\UNDAI\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="VIEWS\BASE\NumericKeyboardWindowMainMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\BASE\TempWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\MASTER\MainPageMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\MASTER\SelfRegPageMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\MASTER\Slave1ElevationProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\MASTER\StationDBPageMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\MASTER\SubstationDB1PageMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\MASTER\SubstationDB2PageMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\MASTER\SubstationRegistrationPageMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="VIEWS\MASTER\SystemSettingMaster.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\NumericKeyboardWindowMainSlave.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\NumericKeyboardWindowSelfRegSlave.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\NumericKeyboardWindowStationDBSlave.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\NumericKeyboardWindowBaseStationRegistrationSlave.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\NumericKeyboardWindowSystemSettingSlave.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\NumericKeyboardWindowSystemSettingMaster.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\NumericKeyboardWindowSubstationDB4.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\NumericKeyboardWindowSubstationDB3.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\NumericKeyboardWindowSubstationDB2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\NumericKeyboardWindowSubstationDB1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\NumericKeyboardWindowSubstationReg.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\NumericKeyboardWindowStationDBMaster.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\NumericKeyboardWindowSelfRegMaster.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\NumericKeyboardWindowMainMaster.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\SystemSettingAccessPIN.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\TempWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\BASE\UNDAIRestartMessageBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\MASTER\MainPageMaster.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\MASTER\SelfRegPageMaster.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\MASTER\Slave1ElevationProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\MASTER\StationDBPageMaster.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\MASTER\AlarmHistoryMaster.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\MASTER\SubstationDB1PageMaster.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\MASTER\SubstationDB4PageMaster.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\MASTER\SubstationDB3PageMaster.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\MASTER\SubstationDB2PageMaster.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\MASTER\SubstationRegistrationPageMaster.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\MASTER\SystemResetSettingMaster.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\MASTER\SystemSettingMaster.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\SLAVE\AlarmHistorySlave.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\SLAVE\MainPageSlave.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\SLAVE\SelfRegPageSlave.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\SLAVE\StationDBPageSlave.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\SLAVE\BaseStationRegistrationPageSlave.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\SLAVE\SystemResetSettingSlave.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="VIEWS\SLAVE\SystemSettingSlave.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

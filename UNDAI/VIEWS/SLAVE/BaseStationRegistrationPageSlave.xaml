@@ -1,0 +1,829 @@
+﻿<UserControl
+    x:Class="UNDAI.VIEWS.SLAVE.BaseStationRegistrationPageSlave"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:UNDAI.VIEWS.SLAVE"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    PreviewMouseDown="UserControl_PreviewMouseDown"
+    PreviewStylusDown="UserControl_PreviewStylusDown"
+    PreviewTouchDown="UserControl_PreviewTouchDown"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <!--  Define the ControlTemplate for the button  -->
+        <ControlTemplate x:Key="ClickableButtonTemplate" TargetType="Button">
+            <Border
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="5">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+                <Border.Effect>
+                    <DropShadowEffect
+                        Direction="-40"
+                        Opacity="0.3"
+                        ShadowDepth="4" />
+                </Border.Effect>
+            </Border>
+        </ControlTemplate>
+
+        <!--  Define a Style for the button  -->
+        <Style x:Key="ClickableButtonStyle" TargetType="Button">
+            <Setter Property="Template" Value="{StaticResource ClickableButtonTemplate}" />
+            <Setter Property="Background" Value="#FFE6E6E6" />
+            <Setter Property="BorderBrush" Value="Blue" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+
+            <Style.Triggers>
+                <!--  Trigger for when the button is pressed  -->
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#adb5bd" />
+                    <Setter Property="BorderBrush" Value="#1b263b" />
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Viewbox
+        x:Name="viewBox1"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Top"
+        Stretch="Uniform"
+        StretchDirection="Both"
+        UseLayoutRounding="True">
+
+        <Grid
+            Width="1920"
+            Height="1200"
+            Background="LightYellow">
+
+            <StackPanel>
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="0.75*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="0.75*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="AUTO" />
+                        <RowDefinition Height="AUTO" />
+                        <RowDefinition Height="AUTO" />
+                        <RowDefinition Height="AUTO" />
+                        <RowDefinition Height="AUTO" />
+                        <RowDefinition Height="AUTO" />
+                        <RowDefinition Height="AUTO" />
+                    </Grid.RowDefinitions>
+
+                    <Grid
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="10">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4"
+                            Margin="10"
+                            FontSize="35"
+                            FontWeight="Bold"
+                            Text="マスター局データベース" />
+
+                        <StackPanel
+                            Grid.Row="0"
+                            Grid.Column="4"
+                            Grid.ColumnSpan="13"
+                            Margin="70,0,0,0"
+                            Orientation="Horizontal">
+
+                            <CheckBox
+                                Margin="60,10,10,10"
+                                VerticalAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                IsChecked="{Binding IsNameShowBase, Mode=TwoWay}">
+
+                                <CheckBox.LayoutTransform>
+                                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                                </CheckBox.LayoutTransform>
+                            </CheckBox>
+
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                Text="名前を表示する" />
+                            <CheckBox
+                                Margin="60,10,10,10"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                IsChecked="{Binding IsMasterIPAddressShow, Mode=TwoWay}">
+
+                                <CheckBox.LayoutTransform>
+                                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                                </CheckBox.LayoutTransform>
+
+                            </CheckBox>
+
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                Text="IPアドレスを表示する" />
+
+                            <CheckBox
+                                Name="ElevationCheckbox"
+                                Margin="60,10,10,10"
+                                VerticalAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                IsChecked="{Binding IsElevationEnabled, Mode=TwoWay}">
+
+                                <CheckBox.LayoutTransform>
+                                    <ScaleTransform ScaleX="3" ScaleY="3" />
+                                </CheckBox.LayoutTransform>
+
+                            </CheckBox>
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                Text="標高情報を手動で入力する" />
+
+                        </StackPanel>
+
+                    </Grid>
+
+                    <Grid
+                        Grid.Row="1"
+                        Grid.RowSpan="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="10">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="10,10,20,10"
+                            FontSize="30"
+                            Text="無線機IP"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="0,5"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
+
+                            <TextBlock
+                                Height="50"
+                                Padding="0,3,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                PreviewMouseDown="MasterAntennaIPAddress_PreviewMouseDown"
+                                PreviewStylusDown="MasterAntennaIPAddress_PreviewStylusDown"
+                                PreviewTouchDown="MasterAntennaIPAddress_PreviewTouchDown"
+                                Text="{Binding MasterAntennaIPAddress}"
+                                TextAlignment="Center" />
+                        </Border>
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Margin="10,10,20,10"
+                            FontSize="30"
+                            Text="緯度"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            Margin="0,5"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
+
+                            <TextBlock
+                                Height="50"
+                                Padding="0,3,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                PreviewMouseDown="LatitudeMaster_PreviewMouseDown"
+                                PreviewStylusDown="LatitudeMaster_PreviewStylusDown"
+                                PreviewTouchDown="LatitudeMaster_PreviewTouchDown"
+                                Text="{Binding LatitudeMaster}"
+                                TextAlignment="Center" />
+                        </Border>
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="4"
+                            Margin="10,10,20,10"
+                            FontSize="30"
+                            Text="標高"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="5"
+                            Margin="0,5"
+                            Background="{Binding ElevationInabilityShow}"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
+
+                            <TextBlock
+                                Height="50"
+                                Padding="0,3,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                PreviewMouseDown="ElevationMaster_PreviewMouseDown"
+                                PreviewStylusDown="ElevationMaster_PreviewStylusDown"
+                                PreviewTouchDown="ElevationMaster_PreviewTouchDown"
+                                Text="{Binding ElevationMaster}"
+                                TextAlignment="Center" />
+                        </Border>
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="10,10,20,10"
+                            FontSize="30"
+                            Text="無線機名"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,5"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
+                            <TextBlock
+                                Height="50"
+                                Padding="0,3,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                Foreground="Gray"
+                                Text="{Binding MasterAntennaName}"
+                                TextAlignment="Center" />
+                            <!--  Adjust padding as necessary  -->
+                        </Border>
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Margin="10,10,20,10"
+                            FontSize="30"
+                            Text="経度"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            Margin="0,5"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
+                            <TextBlock
+                                Height="50"
+                                Padding="0,3,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                PreviewMouseDown="LongitudeMaster_PreviewMouseDown"
+                                PreviewStylusDown="LongitudeMaster_PreviewStylusDown"
+                                PreviewTouchDown="LongitudeMaster_PreviewTouchDown"
+                                Text="{Binding LongitudeMaster}"
+                                TextAlignment="Center" />
+                        </Border>
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="4"
+                            Margin="10,10,20,10"
+                            FontSize="30"
+                            Text="ポール長"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="5"
+                            Margin="0,5"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
+
+                            <TextBlock
+                                Height="50"
+                                Padding="0,3,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                PreviewMouseDown="PoleHeightMaster_PreviewMouseDown"
+                                PreviewStylusDown="PoleHeightMaster_PreviewStylusDown"
+                                PreviewTouchDown="PoleHeightMaster_PreviewTouchDown"
+                                Text="{Binding PoleHeight}"
+                                TextAlignment="Center" />
+                        </Border>
+
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="7"
+                            Grid.ColumnSpan="1"
+                            Margin="0,0"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <Button
+                                x:Name="RegistrationDataGridBtn"
+                                Background="#1d9dfd"
+                                Content="登録"
+                                FontSize="30"
+                                Foreground="White"
+                                PreviewMouseDown="RegistrationDataGrid_PreviewMouseDown"
+                                PreviewStylusDown="RegistrationDataGrid_PreviewStylusDown"
+                                PreviewTouchDown="RegistrationDataGrid_PreviewTouchDown"
+                                PreviewMouseUp="RegistrationDataGrid_PreviewMouseUp"
+                                PreviewStylusUp="RegistrationDataGrid_PreviewStylusUp"
+                                PreviewTouchUp="RegistrationDataGrid_PreviewTouchUp"
+                                Style="{StaticResource ClickableButtonStyle}" />
+                        </Border>
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="6"
+                            Margin="10,10,20,10"
+                            FontSize="30"
+                            Text="名前"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="7"
+                            Margin="0,5"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
+
+                            <TextBox
+                                x:Name="MasterNameTxtBox"
+                                Height="50"
+                                Padding="0,3,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                LostKeyboardFocus="MasterNameTxtBox_LostKeyboardFocus"
+                                PreviewLostKeyboardFocus="MasterNameTxtBox_PreviewLostKeyboardFocus"
+                                PreviewMouseDown="MasterNameTxtBox_PreviewMouseDown"
+                                PreviewStylusDown="MasterNameTxtBox_PreviewStylusDown"
+                                PreviewTouchDown="MasterNameTxtBox_PreviewTouchDown"
+                                Text="{Binding MasterName, UpdateSourceTrigger=PropertyChanged}"
+                                TextAlignment="Center">
+
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="4" />
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </Border>
+
+                    </Grid>
+
+                    <Grid
+                        Grid.Row="3"
+                        Grid.RowSpan="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="10"
+                        Margin="0,20"
+                        Background="#e6e6ca">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.25*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="0.25*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Margin="10,10,20,10"
+                            FontSize="25"
+                            Text="無線機名"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="2"
+                            Grid.Column="3"
+                            Margin="0,5"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
+                            <TextBlock
+                                Height="50"
+                                Padding="0,3,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                Foreground="Gray"
+                                Text="{Binding SelectedMasterAntennaName}"
+                                TextAlignment="Center" />
+                        </Border>
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Margin="10,10,20,10"
+                            FontSize="25"
+                            Text="標高"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            Margin="0,5"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
+                            <TextBlock
+                                Height="50"
+                                Padding="0,3,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                PreviewMouseDown="SelectedElevationMaster_PreviewMouseDown"
+                                PreviewStylusDown="SelectedElevationMaster_PreviewStylusDown"
+                                PreviewTouchDown="SelectedElevationMaster_PreviewTouchDown"
+                                Text="{Binding SelectedElevationMaster}"
+                                TextAlignment="Center" />
+                        </Border>
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="10,10,20,10"
+                            FontSize="25"
+                            Text="緯度"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0,5"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
+                            <TextBlock
+                                Height="50"
+                                Padding="0,3,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                PreviewMouseDown="SelectedLatitudeMaster_PreviewMouseDown"
+                                PreviewStylusDown="SelectedLatitudeMaster_PreviewStylusDown"
+                                PreviewTouchDown="SelectedLatitudeMaster_PreviewTouchDown"
+                                Text="{Binding SelectedLatitudeMaster}"
+                                TextAlignment="Center" />
+                        </Border>
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Margin="10,10,20,10"
+                            FontSize="25"
+                            Text="経度"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            Margin="0,5"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
+                            <TextBlock
+                                Height="50"
+                                Padding="0,3,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                PreviewMouseDown="SelectedLongitudeMaster_PreviewMouseDown"
+                                PreviewStylusDown="SelectedLongitudeMaster_PreviewStylusDown"
+                                PreviewTouchDown="SelectedLongitudeMaster_PreviewTouchDown"
+                                Text="{Binding SelectedLongitudeMaster}"
+                                TextAlignment="Center" />
+                        </Border>
+
+                        <TextBlock
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="10,10,20,10"
+                            FontSize="25"
+                            Text="ポール長"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="0,5"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
+                            <TextBlock
+                                Height="50"
+                                Padding="0,3,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                PreviewMouseDown="SelectedPoleHeightMaster_PreviewMouseDown"
+                                PreviewStylusDown="SelectedPoleHeightMaster_PreviewStylusDown"
+                                PreviewTouchDown="SelectedPoleHeightMaster_PreviewTouchDown"
+                                Text="{Binding SelectedPoleHeight}"
+                                TextAlignment="Center" />
+                        </Border>
+
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="10,10,20,10"
+                            FontSize="25"
+                            Text="無線機IP"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="0,5"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
+                            <TextBlock
+                                Height="50"
+                                Padding="0,3,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                PreviewMouseDown="SelectedMasterAntennaIPAddress_PreviewMouseDown"
+                                PreviewStylusDown="SelectedMasterAntennaIPAddress_PreviewStylusDown"
+                                PreviewTouchDown="SelectedMasterAntennaIPAddress_PreviewTouchDown"
+                                Text="{Binding SelectedMasterAntennaIPAddress}"
+                                TextAlignment="Center" />
+                        </Border>
+
+                        <TextBlock
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Margin="10,10,20,10"
+                            FontSize="25"
+                            Text="名前"
+                            TextAlignment="Right" />
+
+                        <Border
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            Margin="0,5"
+                            Background="White"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            CornerRadius="5">
+                            <TextBox
+                                x:Name="SelectedMasterNameTxtBox"
+                                Height="50"
+                                Padding="0,3,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="30"
+                                LostKeyboardFocus="SelectedMasterNameTxtBox_LostKeyboardFocus"
+                                PreviewLostKeyboardFocus="SelectedMasterNameTxtBox_PreviewLostKeyboardFocus"
+                                PreviewMouseDown="SelectedMasterNameTxtBox_PreviewMouseDown"
+                                PreviewStylusDown="SelectedMasterNameTxtBox_PreviewStylusDown"
+                                PreviewTouchDown="SelectedMasterNameTxtBox_PreviewTouchDown"
+                                Text="{Binding SelectedMasterName, UpdateSourceTrigger=PropertyChanged}"
+                                TextAlignment="Center">
+
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="4" />
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </Border>
+
+                        <Border
+                            x:Name="EditDataGridCommandSlaveBtn"
+                            Grid.Row="3"
+                            Grid.Column="3"
+                            MaxWidth="150"
+                            Margin="0,5"
+                            BorderBrush="Black"
+                            BorderThickness="0.5">
+                            <Button
+                                Background="#1d9dfd"
+                                Content="登録"
+                                FontSize="30"
+                                Foreground="White"
+                                PreviewMouseDown="EditDataGridCommandSlave_PreviewMouseDown"
+                                PreviewStylusDown="EditDataGridCommandSlave_PreviewStylusDown"
+                                PreviewTouchDown="EditDataGridCommandSlave_PreviewTouchDown"
+                                PreviewMouseUp="EditDataGridCommandSlave_PreviewMouseUp"
+                                PreviewStylusUp="EditDataGridCommandSlave_PreviewStylusUp"
+                                PreviewTouchUp="EditDataGridCommandSlave_PreviewTouchUp"
+                                Style="{StaticResource ClickableButtonStyle}" />
+                        </Border>
+
+                    </Grid>
+
+
+                    <Grid
+                        Grid.Row="5"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="10">
+
+                        <DataGrid
+                            AlternatingRowBackground="AliceBlue"
+                            AutoGenerateColumns="False"
+                            CanUserAddRows="False"
+                            IsReadOnly="True"
+                            ItemsSource="{Binding BaseStationRegistrationPageSlaveModel}"
+                            SelectedItem="{Binding SelectedBaseStationRegistrationPageSlaveModel, Mode=TwoWay}">
+
+                            <DataGrid.Resources>
+                                <!--  Style for centering the header text  -->
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                    <Setter Property="FontSize" Value="30" />
+                                </Style>
+                            </DataGrid.Resources>
+
+                            <DataGrid.Columns>
+                                <DataGridTextColumn
+                                    Width="0.25*"
+                                    Binding="{Binding Path=ID}"
+                                    FontSize="25"
+                                    Header="No" />
+                                <DataGridTextColumn
+                                    Width="*"
+                                    Binding="{Binding Path=MasterName}"
+                                    FontSize="25"
+                                    Header="名前" />
+                                <DataGridTextColumn
+                                    Width="*"
+                                    Binding="{Binding Path=MasterAntennaIPAddress}"
+                                    FontSize="25"
+                                    Header="無線機IP" />
+                                <DataGridTextColumn
+                                    Width="*"
+                                    Binding="{Binding Path=MasterAntennaName}"
+                                    FontSize="25"
+                                    Header="無線機名" />
+                                <DataGridTextColumn
+                                    Width="0.75*"
+                                    Binding="{Binding Path=Latitude}"
+                                    FontSize="25"
+                                    Header="緯度" />
+                                <DataGridTextColumn
+                                    Width="0.75*"
+                                    Binding="{Binding Path=Longitude}"
+                                    FontSize="25"
+                                    Header="経度" />
+                                <DataGridTextColumn
+                                    Width="0.5*"
+                                    Binding="{Binding Path=Elevation}"
+                                    FontSize="25"
+                                    Header="標高" />
+                                <DataGridTextColumn
+                                    Width="0.7*"
+                                    Binding="{Binding Path=PoleLength}"
+                                    FontSize="25"
+                                    Header="ポール長さ" />
+                                <DataGridTextColumn
+                                    Width="0.6*"
+                                    Binding="{Binding Path=Date}"
+                                    FontSize="25"
+                                    Header="DATE" />
+                                <DataGridTextColumn
+                                    Width="0.6*"
+                                    Binding="{Binding Path=Time}"
+                                    FontSize="25"
+                                    Header="TIME" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                    </Grid>
+
+                    <StackPanel
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="10"
+                        Orientation="Horizontal">
+
+                        <Button
+                            Width="250"
+                            Height="70"
+                            Margin="0,5,5,5"
+                            Background="#5a5a5a"
+                            Content="戻る"
+                            FontSize="40"
+                            Foreground="White"
+                            PreviewMouseDown="MainPageSlaveNavigateCommandSlave_PreviewMouseDown"
+                            PreviewStylusDown="MainPageSlaveNavigateCommandSlave_PreviewStylusDown"
+                            PreviewTouchDown="MainPageSlaveNavigateCommandSlave_PreviewTouchDown"
+                            Style="{StaticResource ClickableButtonStyle}" />
+
+                        <Button
+                            Width="250"
+                            Height="70"
+                            Margin="0,5"
+                            Content="選択行を削除"
+                            FontSize="40"
+                            PreviewMouseDown="DeleteSelectedItemCommandSlave_PreviewMouseDown"
+                            PreviewStylusDown="DeleteSelectedItemCommandSlave_PreviewStylusDown"
+                            PreviewTouchDown="DeleteSelectedItemCommandSlave_PreviewTouchDown"
+                            Style="{StaticResource ClickableButtonStyle}" />
+
+
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="10"
+                        HorizontalAlignment="Right"
+                        Orientation="Horizontal">
+
+                        <Button
+                            Width="250"
+                            Height="70"
+                            Margin="0,5"
+                            Command="{Binding DBExportCommand}"
+                            Content="エクスポート"
+                            FontSize="40"
+                            Style="{StaticResource ClickableButtonStyle}" />
+
+                    </StackPanel>
+
+                </Grid>
+
+            </StackPanel>
+
+        </Grid>
+    </Viewbox>
+</UserControl>
